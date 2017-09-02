@@ -4,5 +4,5 @@ node_modules
 #default file in mac folders
 .DS_Store
 
-#app configuration details
-config.js
+#app secret details for local development
+secrets.js

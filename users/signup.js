@@ -4,7 +4,9 @@ const User = require('./user');
 const mailer = require('./mailer');
 const config = require('../config');
 
-mongoose.connect(config.db_url);
+const db_url = require('../secrets').db_url || process.env.DB_URL;
+
+mongoose.connect(db_url);
 
 const signup = function(email, name, mobile, regno, callback){
   const newUser = new User({

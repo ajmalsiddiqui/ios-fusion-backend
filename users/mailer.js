@@ -7,8 +7,8 @@ const generateQr = require('./generate-qr');
 const transport = nodeMailer.createTransport({
   service: config.mailService,
   auth: {
-    user: config.mailId,
-    pass: config.mailPass
+    user: require('../secrets').mailId || process.env.MAIL_ID,
+    pass: require('../secrets').mailPass || process.env.MAIL_PASS
   }
 });
 
@@ -27,7 +27,7 @@ const sendMail = function(userEmail, callback){
     //returns a stream with png of qr code
     mailOptions.attachments = [
       {
-        filename: 'ticket.png',
+        filename: config.attachment_name,
         content: generateQr.generateQr(user)
       }
     ];
