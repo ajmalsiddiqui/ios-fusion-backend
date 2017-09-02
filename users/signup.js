@@ -6,7 +6,7 @@ const mailer = require('./mailer');
 const config = require('../config');
 
 const signup = function(email, name, mobile, regno, callback){
-  fs.access('../secrets', err => {
+  fs.access(path.normalize(__dirname + '/../secrets.js'), err => {
     const db_url = !err ? require('../secrets').db_url : process.env.DB_URL;
 
     mongoose.connect(db_url);

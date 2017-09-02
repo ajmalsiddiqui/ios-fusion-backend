@@ -2,8 +2,8 @@ const qr = require('qr-image');
 const fs = require('fs');
 
 //returns a node stream
-const generateQr = function(user){
-  return qr.image(JSON.stringify(user), {
+const generateQr = function(refreshment){
+  return qr.image(JSON.stringify(refreshment), {
     type: 'png'
   });
 }
