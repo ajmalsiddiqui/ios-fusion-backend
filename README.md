@@ -17,5 +17,18 @@ Backend for the iOS Fusion app for graVITas 2017
       regno: <regno>
     }
 
-    success response: {'status': false, 'message': <error_message>}
-    failure response: {'status': true, 'message': <info>}
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
+## /refreshments
+
+#### /new
+
+    request type: POST
+    request body: {
+      type: <refreshment_type>,
+      userId: <unique_mongo_id>
+    }
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: <qr_code_png>
