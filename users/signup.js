@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const fs = require('fs');
 
 const User = require('./user');
 const mailer = require('./mailer');
