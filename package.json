@@ -1,0 +1,26 @@
+{
+  "name": "ios-fusion-backend",
+  "version": "1.0.0",
+  "description": "Backend for iOS Fusion app for graVITas 2017.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eclipse21/ios-fusion-backend.git"
+  },
+  "author": "Mohammed Ajmal Siddiqui <ajmalsiddiqui21@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eclipse21/ios-fusion-backend/issues"
+  },
+  "homepage": "https://github.com/eclipse21/ios-fusion-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.9",
+    "nodemailer": "^4.1.0",
+    "qr-image": "^3.2.0"
+  }
+}

@@ -1,0 +1,8 @@
+#node dependencies
+node_modules
+
+#default file in mac folders
+.DS_Store
+
+#app configuration details
+config.js

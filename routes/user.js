@@ -1,0 +1,18 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const users = require('../users/index');
+
+const router = express.Router();
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended: true}));
+
+router.post('/signup', (req, res) => {
+  users.signup(req.body.email, req.body.name, req.body.mobile, req.body.regno, (err, info) => {
+    if(err) res.json({'status': false, 'message': err.toString()});
+    if(info) res.json({'status': true, 'message': info.toString()});
+  })
+});
+
+module.exports = router;
