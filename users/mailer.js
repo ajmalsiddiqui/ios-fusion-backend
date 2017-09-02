@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const config = require('../config');
 const User = require('./user');
-const generateQr = require('./generate-qr');
+const generateQr = require('../generate-qr');
 
 const sendMail = function(userEmail, callback){
 

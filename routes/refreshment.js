@@ -13,7 +13,7 @@ router.post('/new', (req, res) => {
     if(err) res.json({'status': false, 'message': err.toString()});
     else {
       res.setHeader('Content-disposition', 'attachment; filename=' + req.body.type);
-  res.setHeader('Content-type', 'image/png');
+      res.setHeader('Content-type', 'image/png');
       qrStream.pipe(res);
     }
   })

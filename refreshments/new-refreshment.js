@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const Refreshment = require('./refreshment');
-const generateQr = require('./generate-qr');
+const generateQr = require('../generate-qr');
 const config = require('../config');
 
 const newRefreshment = function(type, userId, callback){
