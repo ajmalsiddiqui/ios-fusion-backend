@@ -11,7 +11,7 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.get('/claimRefreshment/:refreshmentId', (req, res) => {
   refreshments.claimRefreshment(req.params.refreshmentId, (err, info) => {
     if(err) res.json({'status': false, 'message': err.toString()});
-    else res.json({'status': false, 'message': info.toString()});
+    else res.json({'status': true, 'message': info.toString()});
   });
 });
 
