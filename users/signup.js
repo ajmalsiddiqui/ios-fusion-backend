@@ -10,6 +10,8 @@ const signup = function(email, name, mobile, regno, callback){
   fs.access(path.normalize(__dirname + '/../secrets.js'), err => {
     const db_url = !err ? require('../secrets').db_url : process.env.DB_URL;
 
+    console.log(db_url);
+
     mongoose.connect(db_url);
 
     const newUser = new User({
@@ -18,7 +20,7 @@ const signup = function(email, name, mobile, regno, callback){
       mobile: mobile,
       regno: regno
     });
-    console.log(newUser);
+    
     newUser.save(err => {
       //console.log('trying to save');
       if(err) return callback(err);

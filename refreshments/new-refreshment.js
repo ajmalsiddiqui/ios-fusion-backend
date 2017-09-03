@@ -9,7 +9,7 @@ const config = require('../config');
 const newRefreshment = function(type, userId, callback){
   fs.access(path.normalize(__dirname + '/../secrets.js'), err => {
     const db_url = !err ? require('../secrets').db_url : process.env.DB_URL;
-    
+
     mongoose.connect(db_url);
 
     const refreshment = new Refreshment({
