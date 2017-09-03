@@ -1,7 +1,7 @@
 # ios-fusion-backend
 Backend for the iOS Fusion app for graVITas 2017
 
-Click [here](#configuring-for-local-and-heroku-deployments) to learn how to configure for local and Heroku deployments. 
+Click [here](#configuring-for-local-and-heroku-deployments) to learn how to configure for local and Heroku deployments.
 
 ## API Reference
 
@@ -68,7 +68,7 @@ The local deployment relies on a secrets.js file that contains credentials of th
 
 ### Heroku Deployment
 
-The Heroku server is a production server and it does *not* use the secrets.js file as it is not tracked by version control and Heroku uses Git. Instead, the Heroku server uses environment variables to get credentials. Click [here]('https://devcenter.heroku.com/articles/config-vars') to learn how to configure Heroku environment variables.
+The Heroku server is a production server and it does **not** use the secrets.js file as it is not tracked by version control and Heroku uses Git. Instead, the Heroku server uses environment variables to get credentials. Click [here](https://devcenter.heroku.com/articles/config-vars) to learn how to configure Heroku environment variables.
 
 Your deployment should have the following 3 environment variables set to the appropriate credentials:
 
