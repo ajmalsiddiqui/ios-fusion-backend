@@ -7,7 +7,18 @@ Backend for the iOS Fusion app for graVITas 2017
 
 ## /users
 
+#### /markVerified/<user_id>
+
+Sets the 'verified' field of the user corresponding to <user_id> to true if it is false.
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
 #### /signup
+
+Signs up a new user by mailing a master QR code to the registered email address.
 
     request type: POST
     request body: {
@@ -22,7 +33,18 @@ Backend for the iOS Fusion app for graVITas 2017
 
 ## /refreshments
 
+#### /claimRefreshment/<refreshment_id>
+
+Sets the 'claimed' field of the refreshment corresponding to <refreshment_id> to true if it is false.
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
 #### /new
+
+Generates a new QR code for a refreshment, which is returned as a .png file.
 
     request type: POST
     request body: {
