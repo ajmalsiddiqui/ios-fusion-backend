@@ -1,7 +1,7 @@
 # ios-fusion-backend
 Backend for the iOS Fusion app for graVITas 2017
 
-Click [here](#configuring-for-local-and-heroku-deployments)
+Click [here](#configuring-for-local-and-heroku-deployments) to learn how to configure for local and Heroku deployments. 
 
 ## API Reference
 
