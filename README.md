@@ -1,11 +1,13 @@
 # ios-fusion-backend
 Backend for the iOS Fusion app for graVITas 2017
 
-### API Reference
+Click [here](#configuring-for-local-and-heroku-deployments)
+
+## API Reference
 
 `Base URL: https://ios-fusion.herokuapp.com/`
 
-## /users
+### /users
 
 #### /markVerified/<user_id>
 
@@ -31,7 +33,7 @@ Signs up a new user by mailing a master QR code to the registered email address.
     failure response: {'status': false, 'message': <error_message>}
     success response: {'status': true, 'message': <info>}
 
-## /refreshments
+### /refreshments
 
 #### /claimRefreshment/<refreshment_id>
 
@@ -54,3 +56,22 @@ Generates a new QR code for a refreshment, which is returned as a .png file.
 
     failure response: {'status': false, 'message': <error_message>}
     success response: <qr_code_png>
+
+
+## Configuring for Local and Heroku Deployments
+
+### Local Deployments
+
+The local deployment relies on a secrets.js file that contains credentials of the sender email account and the mongoDB url. These are secret and should not be committed to version control. In order to generate the secrets.js on a Linux/OSX machine, run the following command:
+
+`npm run secrets-linux`
+
+### Heroku Deployment
+
+The Heroku server is a production server and it does *not* use the secrets.js file as it is not tracked by version control and Heroku uses Git. Instead, the Heroku server uses environment variables to get credentials. Click [here]('https://devcenter.heroku.com/articles/config-vars') to learn how to configure Heroku environment variables.
+
+Your deployment should have the following 3 environment variables set to the appropriate credentials:
+
+1. MAIL_ID : The email address you are using
+2. MAIL_PASS : The password of the said email address
+3. DB_URL : The URL of the MongoDB instance you are using
