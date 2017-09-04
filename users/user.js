@@ -25,6 +25,10 @@ const userSchema = new Schema({
   verified: {
     type: Boolean,
     default: false
+  },
+  posts: {
+    type: [Schema.Types.ObjectId],
+    ref: 'Post'
   }
 });
 

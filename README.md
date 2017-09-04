@@ -50,12 +50,70 @@ Generates a new QR code for a refreshment, which is returned as a .png file.
 
     request type: POST
     request body: {
-      type: <refreshment_type>,
-      userId: <unique_mongo_id>
+      type: <refreshment_type>, //the type of refreshment: coffee, snacks, etc
+      userId: <user_id>
     }
 
     failure response: {'status': false, 'message': <error_message>}
     success response: <qr_code_png>
+
+
+### /forum
+
+#### /new
+
+Creates a new post.
+
+    request type: POST
+    request body: {
+      content: <post_content>,
+      userId: <user_id>,
+      tags: <tags_for_post> //the tags for the given post; optional as of now
+    }
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
+#### /getAll
+
+Get all the posts in the forum.
+
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
+#### /byUser/<user_id>
+
+Get all the posts made in the forum by user corresponding to <user_id>.
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
+#### /byPost/<post_id>
+
+Get *one* post corresponding to <post_id>.
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
+#### /byTags
+
+Get all posts that contain the tags sent as an array in the post request.
+
+    request type: POST
+
+    request body: {
+      tags: <array_of_tags>
+    }
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
 
 
 ## Configuring for Local and Heroku Deployments

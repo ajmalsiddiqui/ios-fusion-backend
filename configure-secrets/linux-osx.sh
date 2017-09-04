@@ -10,7 +10,7 @@ echo "Enter password for this email address"
 
 read pass
 
-echo "Enter the url of your mongodb deployment or enter \"d\" for default value of \'mongodb://127.0.0.1:27017/\'"
+echo "Enter the url of your mongodb deployment or enter \"d\" for default value of 'mongodb://127.0.0.1:27017/'"
 
 read mongo
 
@@ -29,7 +29,6 @@ config.mailPass = '"$pass"';
 
 module.exports = config;"
 
-cd ..
 
 touch secrets.js
 
