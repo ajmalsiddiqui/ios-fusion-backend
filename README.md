@@ -120,7 +120,7 @@ Get all posts that contain the tags sent as an array in the post request.
 
 ### Local Deployments
 
-The local deployment relies on a secrets.js file that contains credentials of the sender email account and the mongoDB url. These are secret and should not be committed to version control. In order to generate the secrets.js on a Linux/OSX machine, run the following command:
+The local deployment relies on a secrets.js file that contains credentials of the sender email account and the mongoDB url. These are secret and should not be committed to version control. In order to generate the secrets.js on a Linux/OSX machine, run the following command from the root directory of the repo:
 
 `npm run secrets-linux`
 
