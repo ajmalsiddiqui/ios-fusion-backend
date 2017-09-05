@@ -7,6 +7,8 @@ Click [here](#configuring-for-local-and-heroku-deployments) to learn how to conf
 
 `Base URL: https://ios-fusion.herokuapp.com/`
 
+1. [/users](#forum)
+
 
 ### /users
 
