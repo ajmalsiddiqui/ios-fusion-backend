@@ -30,7 +30,17 @@ Get all the details of the user corresponding to <user_id>.
     request type: GET
 
     failure response: {'status': false, 'message': <error_message>}
-    success response: {'status': true, 'message': <info>}
+    success response: {'status': true, 'message': <user_details_json>}
+
+
+#### /getLikedPosts/<user_id>
+
+Get all the postIds of the posts liked by user corresponding to <user_id>.
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <posts_array>}
 
 #### /signup
 
@@ -125,6 +135,16 @@ Get all posts that contain the tags sent as an array in the post request.
     request body: {
       tags: <array_of_tags>
     }
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
+
+#### /likePost/<userId>/<postId>
+
+Mark post corresponding to <postId> as liked by <userId>. This increases the number of likes by one and adds <userId> to the list of users who liked the post.
+
+    request type: GET
 
     failure response: {'status': false, 'message': <error_message>}
     success response: {'status': true, 'message': <info>}

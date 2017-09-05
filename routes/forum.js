@@ -36,6 +36,13 @@ router.get('/byPost/:postId', (req, res) => {
   });
 });
 
+router.get('/likePost/:userId/:postId', (req, res) => {
+  forum.likePost(req.params.postId, req.params.userId, (err, info) => {
+    if(err) res.json({'status': false, 'message': err.toString()});
+    else res.json({'status': true, 'message': info.toString()});
+  });
+});
+
 router.post('/byTags', (req, res) => {
   forum.getPostsByTags(req.body.tags, (err, info) => {
     if(err) res.json({'status': false, 'message': err.toString()});
