@@ -23,6 +23,15 @@ Sets the 'verified' field of the user corresponding to <user_id> to true if it i
     failure response: {'status': false, 'message': <error_message>}
     success response: {'status': true, 'message': <info>}
 
+#### /getDetails/<user_id>
+
+Get all the details of the user corresponding to <user_id>.
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
 #### /signup
 
 Signs up a new user by mailing a master QR code to the registered email address.
