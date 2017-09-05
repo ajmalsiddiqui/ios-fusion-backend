@@ -29,6 +29,17 @@ router.get('/getLikedPosts/:userId', (req, res) => {
   });
 });
 
+router.get('/getUserQr/:userId', (req, res) => {
+  users.getUserQr(req.params.userId, (err, rqstream) => {
+    if(err) res.json({'status': false, 'message': err.toString()});
+    else {
+      res.setHeader('Content-disposition', 'attachment; filename=' + req.body.type);
+      res.setHeader('Content-type', 'image/png');
+      qrStream.pipe(res);
+    }
+  });
+});
+
 
 router.post('/signup', (req, res) => {
   users.signup(req.body.email, req.body.name, req.body.mobile, req.body.regno, (err, info) => {

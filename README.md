@@ -42,6 +42,15 @@ Get all the postIds of the posts liked by user corresponding to [user_id].
     failure response: {'status': false, 'message': <error_message>}
     success response: {'status': true, 'message': <posts_array>}
 
+#### /getUserQr/[user_id]
+
+Get QR code of user corresponding to [user_id].
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: <qr_code_png>
+
 #### /signup
 
 Signs up a new user by mailing a master QR code to the registered email address.
