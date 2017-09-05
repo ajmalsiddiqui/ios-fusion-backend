@@ -15,6 +15,14 @@ router.get('/markVerified/:userId', (req, res) => {
   });
 });
 
+router.get('/getDetails/:userId', (req, res) => {
+  users.getDetails(req.params.userId, (err, info) => {
+    if(err) res.json({'status': false, 'message': err.toString()});
+    else res.json({'status': true, 'message': info.toString()});
+  });
+});
+
+
 router.post('/signup', (req, res) => {
   users.signup(req.body.email, req.body.name, req.body.mobile, req.body.regno, (err, info) => {
     if(err) res.json({'status': false, 'message': err.toString()});
