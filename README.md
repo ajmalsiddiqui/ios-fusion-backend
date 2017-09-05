@@ -69,7 +69,7 @@ Creates a new post.
     request body: {
       content: <post_content>,
       userId: <user_id>,
-      tags: <tags_for_post> //the tags for the given post; optional as of now
+      tags: <tags_for_post> //the tags for the given post as an array; optional as of now
     }
 
     failure response: {'status': false, 'message': <error_message>}
