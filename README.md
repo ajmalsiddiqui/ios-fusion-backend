@@ -140,7 +140,7 @@ Get all posts that contain the tags sent as an array in the post request.
     success response: {'status': true, 'message': <info>}
 
 
-#### /likePost/<userId>/<postId>
+#### /likePost/<userId>/ <postId>
 
 Mark post corresponding to <postId> as liked by <userId>. This increases the number of likes by one and adds <userId> to the list of users who liked the post.
 
