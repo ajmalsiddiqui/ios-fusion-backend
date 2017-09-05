@@ -14,18 +14,18 @@ Click [here](#configuring-for-local-and-heroku-deployments) to learn how to conf
 
 ### /users
 
-#### /markVerified/<user_id>
+#### /markVerified/[user_id]
 
-Sets the 'verified' field of the user corresponding to <user_id> to true if it is false.
+Sets the 'verified' field of the user corresponding to [user_id] to true if it is false.
 
     request type: GET
 
     failure response: {'status': false, 'message': <error_message>}
     success response: {'status': true, 'message': <info>}
 
-#### /getDetails/<user_id>
+#### /getDetails/[user_id]
 
-Get all the details of the user corresponding to <user_id>.
+Get all the details of the user corresponding to [user_id].
 
     request type: GET
 
@@ -33,9 +33,9 @@ Get all the details of the user corresponding to <user_id>.
     success response: {'status': true, 'message': <user_details_json>}
 
 
-#### /getLikedPosts/<user_id>
+#### /getLikedPosts/[user_id]
 
-Get all the postIds of the posts liked by user corresponding to <user_id>.
+Get all the postIds of the posts liked by user corresponding to [user_id].
 
     request type: GET
 
@@ -59,9 +59,9 @@ Signs up a new user by mailing a master QR code to the registered email address.
 
 ### /refreshments
 
-#### /claimRefreshment/<refreshment_id>
+#### /claimRefreshment/[refreshment_id]
 
-Sets the 'claimed' field of the refreshment corresponding to <refreshment_id> to true if it is false.
+Sets the 'claimed' field of the refreshment corresponding to [refreshment_id] to true if it is false.
 
     request type: GET
 
@@ -75,7 +75,7 @@ Generates a new QR code for a refreshment, which is returned as a .png file.
     request type: POST
     request body: {
       type: <refreshment_type>, //the type of refreshment: coffee, snacks, etc
-      userId: <user_id>
+      userId: [user_id]
     }
 
     failure response: {'status': false, 'message': <error_message>}
@@ -91,7 +91,7 @@ Creates a new post.
     request type: POST
     request body: {
       content: <post_content>,
-      userId: <user_id>,
+      userId: [user_id],
       tags: <tags_for_post> //the tags for the given post as an array; optional as of now
     }
 
@@ -108,18 +108,18 @@ Get all the posts in the forum.
     failure response: {'status': false, 'message': <error_message>}
     success response: {'status': true, 'message': <info>}
 
-#### /byUser/<user_id>
+#### /byUser/[user_id]
 
-Get all the posts made in the forum by user corresponding to <user_id>.
+Get all the posts made in the forum by user corresponding to [user_id].
 
     request type: GET
 
     failure response: {'status': false, 'message': <error_message>}
     success response: {'status': true, 'message': <info>}
 
-#### /byPost/<post_id>
+#### /byPost/[post_id]
 
-Get *one* post corresponding to <post_id>.
+Get *one* post corresponding to [post_id].
 
     request type: GET
 
@@ -140,9 +140,9 @@ Get all posts that contain the tags sent as an array in the post request.
     success response: {'status': true, 'message': <info>}
 
 
-#### /likePost/<userId> /<postId>
+#### /likePost/[userId]/[postId]
 
-Mark post corresponding to <postId> as liked by <userId>. This increases the number of likes by one and adds <userId> to the list of users who liked the post.
+Mark post corresponding to [post_id] as liked by [user_id]. This increases the number of likes by one and adds <userId> to the list of users who liked the post.
 
     request type: GET
 
