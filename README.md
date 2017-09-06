@@ -10,6 +10,7 @@ Click [here](#configuring-for-local-and-heroku-deployments) to learn how to conf
 1. [/users](#users)
 2. [/refreshments](#refreshments)
 3. [/forum](#forum)
+4. [/wifi](#wifi)
 
 
 ### /users
@@ -157,6 +158,34 @@ Mark post corresponding to [post_id] as liked by [user_id]. This increases the n
 
     failure response: {'status': false, 'message': <error_message>}
     success response: {'status': true, 'message': <info>}
+
+
+
+### /wifi
+
+#### /getCoupon/[regno]
+
+Gets wifi coupon details corresponding to [regno].
+
+    request type: GET
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <coupon_json>}
+
+#### /add
+
+Adds new coupon to database.
+
+    request type: POST
+    request body: {
+      regno: [regno],
+      username: [username],
+      password: [password]
+    }
+
+    failure response: {'status': false, 'message': <error_message>}
+    success response: {'status': true, 'message': <info>}
+
 
 
 ## Configuring for Local and Heroku Deployments
